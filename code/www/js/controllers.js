@@ -66,24 +66,25 @@ angular.module('songhop.controllers', ['ionic', 'songhop.services'])
   console.log("test");
 };
  
-$scope.transitionRight = function(card) {
+$scope.cardTransitionedRight = function(card) {
   console.log('card removed to the right');
-  console.log(card);
+  // console.log(card);
+     User.addSongToFavorites($scope.cards[card]);
  
 };
-$scope.transitionLeft = function(card) {
+$scope.cardTransitionedLeft = function(card) {
   console.log('card removed to the left');
   console.log(card);
 };
   $scope.cardSwipedLeft = function(index) {
     console.log('LEFT SWIPE NOPE');
-    $scope.addCard();
+     // $scope.addCard();
   };
   $scope.cardSwipedRight = function(index) {
     console.log('RIGHT SWIPE FAVORITE');
     console.log(index);
-      User.addSongToFavorites($scope.cards[index]);
-    $scope.addCard();
+  
+    // $scope.addCard();
   };
 })
 /*
